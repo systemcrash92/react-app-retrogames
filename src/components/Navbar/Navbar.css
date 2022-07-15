@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Rubik+Mono+One&family=Volkhov&display=swap');
+header{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0,50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    
+}
+.btn-navbar{
+
+    background-color: black;
+    color: aliceblue;
+    font-family: 'Rubik Mono One', sans-serif;
+    margin: 1%;
+    padding: 2px;
+    cursor: pointer;
+
+}
+.Cart-logo{
+    width: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(255, 245, 240);
+    font-size: 11px;
+    cursor: pointer;
+
+    
+
+
+}
+.Cart-logo img{
+    width: 20px;
+    margin: 2px;
+}
+
+.btn-navbar:hover{
+    color: rgb(255, 157, 0);
+}
+.Cart-logo:hover{
+    background-color: rgb(255, 157, 0);
+}
+
+.btn-navbar:active{
+    transform: translateY(3px);
+}
+.Cart-logo:active{
+    transform: translateY(3px);
+    filter: brightness(150%);
+}
