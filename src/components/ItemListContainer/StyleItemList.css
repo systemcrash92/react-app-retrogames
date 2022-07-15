@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Rubik+Mono+One&family=Volkhov&display=swap');
+
+.Container-item{
+
+    width: 100%;
+    background-color: rgba(10, 10, 10, 40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.Container-item h1 {
+    color: aliceblue;
+    font-family: 'Rubik Mono One', sans-serif;
+}
