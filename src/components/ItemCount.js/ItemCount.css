@@ -1,0 +1,52 @@
+.btn-container{
+
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LabelCount{
+    width: 130px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(255,212,35);
+    background: linear-gradient(93deg, rgba(255,212,35,1) 0%, rgba(205,108,16,1) 100%);
+    margin-bottom: 3px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 0px solid;
+}
+.LabelCount button{
+    width: 30px;
+    height: 100%;
+    color: darkorange;
+    border: 0px;
+    cursor: pointer;
+    font-size: 18px;
+    
+    
+}
+.LabelCount h1{
+    color: rgb(255, 255, 255);
+    font-size: 20px; 
+    text-shadow: 1px 1px 1px black;   
+}
+.btn-addtocart{
+    width: 130px;
+    height: 30px;
+    color: aliceblue;
+    background: rgb(255,212,35);
+    background: linear-gradient(93deg, rgba(255,212,35,1) 0%, rgba(205,108,16,1) 100%);
+    border: 0px;
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+}
+.btn-addtocart:active{
+    transform: translateY(2px);
+}

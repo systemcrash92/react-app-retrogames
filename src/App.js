@@ -4,6 +4,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import './App.css'
+import ButtonCount from "./components/ItemCount.js/ItemCount";
 
 
 
