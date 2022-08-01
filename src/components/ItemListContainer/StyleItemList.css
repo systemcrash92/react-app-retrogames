@@ -55,7 +55,7 @@
     margin: 3%;
     
 }
-.card button{
+.btn-description{
     color: aliceblue;
     background: rgb(255,212,35);
     background: linear-gradient(93deg, rgba(255,212,35,1) 0%, rgba(205,108,16,1) 100%);
@@ -68,6 +68,9 @@
     font-family: 'VT323', monospace;
     border: 0px solid;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .card h3{
     color: aliceblue;
@@ -76,12 +79,12 @@
     margin-top: 4%;
 
 }
-.card button:active{
+.card Link:active{
     transform: translateY(2px);
     background: rgb(255,212,35);
     background: linear-gradient(93deg, rgb(97, 255, 35) 0%, rgb(104, 249, 123) 100%);
 }
-.card:hover{
+.btn-description:hover{
     transform: translateY(-3px);
     filter: brightness(120%);
 }

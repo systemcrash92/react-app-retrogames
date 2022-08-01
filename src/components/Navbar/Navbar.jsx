@@ -1,6 +1,7 @@
 
 import './Navbar.css';
 import ButtonCart from "../Buttoncart/Buttoncart";
+import {Link} from 'react-router-dom'
 
 
 
@@ -8,8 +9,8 @@ const Navbar = ({setSection}) =>{
     
     return  (
         <header>
-            <button type="button" className="btn-navbar" onClick={()=>{setSection("HomeSection")}} >HOME</button>
-            <button onClick={()=>setSection("ItemList") } type="button" className="btn-navbar">GAMES</button>
+            <Link to='/' className="btn-navbar">HOME</Link>
+            <Link to='/GamesList' className="btn-navbar">GAMES</Link>
             <ButtonCart /> 
         </header>
 

@@ -4,20 +4,38 @@ import './ItemCount.css'
 
 
 
-const ButtonCount = ()=>{
+const ItemCount = ({MaxStock})=>{
 const [Counter,setCounter] = useState(0)
 
-const Increment = ()=>{setCounter(Counter + 1)}
-const Decrement =()=>{setCounter(Counter - 1)}
+
+
+
+
+const Increment = ()=>{
+    setCounter(Counter + 1)
+     if (Counter >= MaxStock) {
+        setCounter(MaxStock)
+     }
+     console.log(MaxStock)
+     return Counter
+     
+    }
+const Decrement =()=>{
+    setCounter(Counter - 1)
+    if (Counter<=1) {
+        setCounter(1)
+    }
+    return Counter
+}
 
 return (
-    <div btn-container>
+    <div className='btn-container'>
        <div className='LabelCount'>
             <button type='button' onClick={Decrement}>-</button>
             <h1>{Counter}</h1>
             <button type='button' onClick={Increment}>+</button>
         </div> 
-        <button className='btn-addtocart' typeof='button'>Agregar al carrito</button>  
+        <button className='btn-addtocart' typeof='button'>Add to cart</button>  
 
 
     </div>
@@ -28,4 +46,4 @@ return (
 }
 
 
-export default ButtonCount 
+export default ItemCount 

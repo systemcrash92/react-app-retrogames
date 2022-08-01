@@ -16,6 +16,7 @@ header{
     margin: 1%;
     padding: 2px;
     cursor: pointer;
+    text-decoration: none;
 
 }
 .Cart-logo{

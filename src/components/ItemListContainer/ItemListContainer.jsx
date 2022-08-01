@@ -1,34 +1,28 @@
 import { useEffect,useState } from 'react';
 import './StyleItemList.css';
 import { getProduct } from '../../asyncMock';
+import {Link} from 'react-router-dom'
+
 
 
 
 const ItemListContainer = (props)=>{
     const [Products,SetProducts]= useState([])
-    const [Loading,setLoading]= useState(true)
+    
 
 // pido la peticion a la api dsp de montar el componente
     useEffect(() => {
      
         getProduct().then(response=>{
             SetProducts(response)
-            setLoading(false)
+           
             
         })
     
     }, [])
 
 //loading section
-    if (Loading) {
-        return (
-            <div className='Loading-container'>
-                <img src="images/rotate_loading.png" alt="loading" />
-            </div>
-
-        )
-    }
-
+  
     
     return (
         <div className="Container-Sectionitem">
@@ -38,11 +32,11 @@ const ItemListContainer = (props)=>{
               {Products.map(producto =>{
 
                 return(
-                    <div className='card'> 
+                    <div key={producto.id} className='card'> 
                         <h1>{producto.name}</h1>
                         <img src={producto.img} alt="img"/>
                         <h2>Price {producto.price}</h2>
-                        <button type='button'>Description</button>
+                        <Link className='btn-description' to={`/GamesList/ItemDetail/${producto.id}`}>Description</Link>
                         <h3>available stock {producto.stock}</h3>
                     
                     </div>
