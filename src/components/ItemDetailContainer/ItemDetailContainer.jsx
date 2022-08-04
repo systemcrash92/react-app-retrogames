@@ -10,8 +10,15 @@ const ItemDetailContainer =()=>{
 
     const [Product,SetProduct]= useState([])
     const params = useParams()
+    const [Quantity,SetQuantity] = useState(0)
+    
+    const addQuantity =(value)=>{
+        SetQuantity(value)
+         
+    }
     
     
+
     useEffect(() => {
      
         getProductsTest(params.gameID).then((response)=>{
@@ -21,7 +28,7 @@ const ItemDetailContainer =()=>{
                 
         })
     
-    },[params.gameID])
+    },[params.gameID,Quantity])
 
     return(
         <div  className="Container-Detail">
@@ -29,7 +36,7 @@ const ItemDetailContainer =()=>{
         <div className="Description-Container">
            <p>{Product.description}</p>
            <h2>Price  ${Product.price}</h2>
-           <ItemCount MaxStock={Product.stock} />
+           {Quantity > 0 ? <button  className="btn-gotocart">Go to cart</button>:<ItemCount addQuantity={addQuantity}  MaxStock={Product.stock} />}
            
         </div>
 

@@ -4,7 +4,7 @@ import './ItemCount.css'
 
 
 
-const ItemCount = ({MaxStock})=>{
+const ItemCount = ({MaxStock,addQuantity})=>{
 const [Counter,setCounter] = useState(0)
 
 
@@ -12,11 +12,12 @@ const [Counter,setCounter] = useState(0)
 
 
 const Increment = ()=>{
+    
     setCounter(Counter + 1)
      if (Counter >= MaxStock) {
         setCounter(MaxStock)
      }
-     console.log(MaxStock)
+     
      return Counter
      
     }
@@ -35,7 +36,7 @@ return (
             <h1>{Counter}</h1>
             <button type='button' onClick={Increment}>+</button>
         </div> 
-        <button className='btn-addtocart' typeof='button'>Add to cart</button>  
+        <button className='btn-addtocart'  onClick={()=>{addQuantity(Counter)}}>Add to cart</button>  
 
 
     </div>
