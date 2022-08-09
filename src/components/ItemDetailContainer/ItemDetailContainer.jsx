@@ -1,20 +1,28 @@
-import { useState,useEffect } from "react";
-import { getProductsTest } from "../../asyncMock";
+import { useState,useEffect,useContext} from "react";
+import { getProductsTest} from "../../asyncMock";
 import ItemCount from "../ItemCount.js/ItemCount";
 import "./ItemDetailContainer.css"
 import {useParams} from 'react-router-dom'
+import { CartContext } from "../../context/CartContext";
 
 
 
 const ItemDetailContainer =()=>{
 
-    const [Product,SetProduct]= useState([])
+    const [Product,SetProduct]= useState({})
     const params = useParams()
     const [Quantity,SetQuantity] = useState(0)
+
+    const  values = useContext(CartContext)
     
-    const addQuantity =(value)=>{
-        SetQuantity(value)
-         
+    
+    const addQuantity =(quantity)=>{
+        SetQuantity(quantity)
+        
+        values[0]({...Product,quantity})
+        
+        
+        
     }
     
     
@@ -24,11 +32,12 @@ const ItemDetailContainer =()=>{
         getProductsTest(params.gameID).then((response)=>{
             
             SetProduct(response)
+            
            
                 
         })
     
-    },[params.gameID,Quantity])
+    },[params.gameID])
 
     return(
         <div  className="Container-Detail">
