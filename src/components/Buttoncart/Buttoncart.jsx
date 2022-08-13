@@ -11,7 +11,7 @@ const ButtonCart =()=>{
   
     return (
 
-        <button  className="Cart-logo"  type="button"> <img src="images/logocart.png" alt="" /> <h1>{Quantity[1].length}</h1> </button>
+        <button  className="Cart-logo"  type="button"> <img src="images/logocart.png" alt="" /> <h1>{Quantity[4]()}</h1> </button>
         
 
     )

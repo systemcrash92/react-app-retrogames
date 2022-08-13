@@ -6,33 +6,47 @@ export const CartContext = createContext()
 
 export const CartContextProvider = ({ children })=>{
     //variables
-            const [CartInfo,setCart] = useState([])
-    
+            const [CartInfo,setCart] = useState([]);
+           
+            
     
     
 
     //Funciones
-   const addToCart = (item)=>{
-    
-            console.log('hola')
-        if (!isInCart(item.id)) {
-            
-           
-
-            setCart([...CartInfo,item])
-            
-            
-             console.log(CartInfo)
-          
-            
-        
+    const addItem = (productToAdd)=>{
+        if (!isInCart(productToAdd.id)) {
+            setCart([...CartInfo,productToAdd])
         }else{
-            console.log("q onda man")
-        }
+            
+            const cartUpdated = CartInfo.map(prod => {
+                if (prod.id === productToAdd.id) {
+                    
+                    const productUpdated = {
+                        ...prod,
+                        quantity:productToAdd.quantity
+                    }
+                    
+                    return productUpdated
+                }else{
+                    return prod
+                }
+            })
+            setCart(cartUpdated)
 
-    
+          
+        }
         
-   }
+        
+    }
+    
+    const getQuantity=()=>{
+        let accu =0
+        CartInfo.forEach(prod =>{
+            accu +=prod.quantity
+        })
+        return accu
+    }
+     
    const  isInCart =(id)=>{//check si esta en el carro
 
             return CartInfo.some(prod=> prod.id === id)
@@ -44,6 +58,16 @@ export const CartContextProvider = ({ children })=>{
 
    }
 
+   const getProductQuantity = (id) =>{
+    const product =  CartInfo.find(prod => prod.id === id)
+
+        if (product){
+            return product.quantity
+        }else{
+            return 1
+        }
+   }
+
 
 
    const  removeItem = (id)=>{// remuevo en elemento del carrito
@@ -51,7 +75,7 @@ export const CartContextProvider = ({ children })=>{
     setCart(CartWhitOutitem)
    }
     return(
-        <CartContext.Provider value={[addToCart,CartInfo,isInCart,removeItem,clearCart]}>
+        <CartContext.Provider value={[addItem,isInCart,removeItem,clearCart,getQuantity,getProductQuantity,CartInfo]}>
             {children}
         </CartContext.Provider>
     )

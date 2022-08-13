@@ -1,13 +1,22 @@
 
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import './ItemCount.css'
 
 
 
-const ItemCount = ({ MaxStock, addQuantity }) => {
-    const [Counter, setCounter] = useState(0)
 
+const ItemCount = ({ MaxStock , addQuantity,initial}) => {
+    
+    const [Counter, setCounter] = useState(initial)
+    
 
+    useEffect(() => {
+     
+        setCounter(initial)
+        
+    },[initial])
+
+   
 
 
 

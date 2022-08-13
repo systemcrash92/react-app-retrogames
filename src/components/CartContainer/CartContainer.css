@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Rubik+Mono+One&family=Volkhov&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=VT323&display=swap');
+
+.container-main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5%;
+    
+
+}
+.container-cards{
+ width: 100%;
+ background-color: rgba(0, 0, 0,60%);
+ display:  flex;
+ justify-content: center;
+ flex-direction: column;
+ align-items: center;
+ padding: 7%;
+ border-radius: 10px;
+
+}
+.cart-card{
+
+display: flex;
+width: 80%;
+height: 70px;
+background: rgb(255,212,35);
+    background: linear-gradient(93deg, rgb(225, 162, 15) 0%, rgba(205,108,16,1) 100%);
+justify-content: space-between;
+align-items: center;
+margin-top: 3%;
+padding: 1%;
+border-radius: 5px;
+flex-wrap: wrap;
+}
+.cart-card h1{
+    color: aliceblue;
+    text-shadow: 0px 0px 5px black;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+.cart-card h2{
+    color: aliceblue;
+    text-shadow: 1px 1px 1px black;
+    font-family: 'VT323', monospace;
+    
+}
+.cart-card button{
+    width: 130px;
+    height: 30px;
+    color: aliceblue;
+    background: rgb(255,212,35);
+    background: linear-gradient(93deg, rgb(255, 35, 35) 0%, rgb(180, 23, 23) 100%);
+    border: 0px;
+    border-radius: 7px;
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px black;
+    
+}
+
+
+.cart-card:hover{
+    filter: brightness(1.2);
+}
+.cart-card button:active{
+    transform: translateY(2px);
+}
+
+
