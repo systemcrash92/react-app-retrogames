@@ -1,7 +1,9 @@
 import { useEffect,useState } from 'react';
 import './StyleItemList.css';
-import { getProduct } from '../../asyncMock';
+//import { getProduct } from '../../asyncMock';
 import {Link} from 'react-router-dom'
+import {getDocs,collection} from 'firebase/firestore'
+import {db} from '../../services/firebase/index'
 
 
 
@@ -13,8 +15,16 @@ const ItemListContainer = (props)=>{
 // pido la peticion a la api dsp de montar el componente
     useEffect(() => {
      
-        getProduct().then(response=>{
-            SetProducts(response)
+        
+        
+        getDocs(collection(db,'products')).then(response=>{
+                
+                const products = response.docs.map(doc =>{
+                    return {id:doc.id, ...doc.data()}
+                    
+                })
+                SetProducts(products)
+               
            
             
         })

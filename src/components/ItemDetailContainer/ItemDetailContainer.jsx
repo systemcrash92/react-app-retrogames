@@ -1,11 +1,12 @@
 import { useState,useEffect,useContext} from "react";
-import { getProductsTest} from "../../asyncMock";
+//mport { getProductsTest} from "../../asyncMock";
 import ItemCount from "../ItemCount.js/ItemCount";
 import "./ItemDetailContainer.css"
 import {useParams} from 'react-router-dom'
 import { CartContext } from "../../context/CartContext";
 import {Link} from 'react-router-dom'
-
+import { getDoc,doc } from "firebase/firestore";
+import { db } from "../../services/firebase/index";
 
 const ItemDetailContainer =()=>{
 
@@ -29,9 +30,10 @@ const ItemDetailContainer =()=>{
 
     useEffect(() => {
      
-        getProductsTest(params.gameID).then((response)=>{
-            
-            SetProduct(response)
+        
+        getDoc(doc(db,'products',params.gameID)).then((response)=>{
+            const product = {id:response.id,...response.data()}
+           SetProduct(product)
             
             
            

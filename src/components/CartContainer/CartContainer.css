@@ -20,6 +20,7 @@
  align-items: center;
  padding: 7%;
  border-radius: 10px;
+ 
 
 }
 .cart-card{
@@ -61,12 +62,35 @@ flex-wrap: wrap;
     
 }
 
+.btn-makeorder{
+    width: 130px;
+    height: 30px;
+    color: aliceblue;
+    background: rgb(255,212,35);
+    background: linear-gradient(93deg, rgb(3, 190, 9) 0%, rgb(59, 241, 65) 100%);
+    border: 0px;
+    border-radius: 7px;
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px black;
+    margin-top: 2%;
+
+}
+.empty{
+    color: aliceblue;
+    text-shadow: 0px 0px 5px black;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
 
 .cart-card:hover{
     filter: brightness(1.2);
 }
 .cart-card button:active{
     transform: translateY(2px);
+}
+.btn-makeorder:active{
+    transform: translateY(2px);   
 }
 
 
