@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Rubik+Mono+One&family=Volkhov&display=swap');
+
+.category-container{
+
+    width: 100%;
+
+    background-color: rgba(0,0,0,60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-container{
+    width: 180%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5%;
+}
+.input-container h1 {
+    font-family: 'Rubik Mono One', sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 5px rgb(90, 50, 1);
+    
+    padding: 1%;
+    margin-bottom: 3%;
+}
+.input-container select{
+    width: 50%;
+    height: 30px;
+    background-color: rgba(0, 0, 0,60%);
+    color: darkorange;
+    font-family: 'Rubik Mono One', sans-serif;
+    border-radius: 5px;
+    border: 1px solid darkorange;
+   
+}

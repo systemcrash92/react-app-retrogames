@@ -83,9 +83,7 @@ flex-wrap: wrap;
 }
 
 
-.cart-card:hover{
-    filter: brightness(1.2);
-}
+
 .cart-card button:active{
     transform: translateY(2px);
 }
