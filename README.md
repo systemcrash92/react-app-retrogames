@@ -44,12 +44,12 @@ npm start
     * Contador con botón ✅
     * Catálogo con MAPS y Promises ✅
     * Detalle de Producto ✅
-    * Sincronizar counter ❌
-    * CartContext ❌
-    * Cart View ❌
-    * Item Collection ❌
-    * Item Collection II ❌
-
+    * Sincronizar counter ✅
+    * CartContext ✅
+    * Cart View ✅
+    * Item Collection ✅
+    * Item Collection II ✅
+    * Entrega Final ✅
     
 
 
