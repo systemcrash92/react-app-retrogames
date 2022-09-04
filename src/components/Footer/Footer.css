@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=VT323&display=swap');
+
+.footerContainer{
+    margin-top: 20%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 150px;
+    background-color: rgba(0, 0, 0,90%);
+    padding: 5%;
+    
+}
+.footerContainer h1{
+
+    font-size: 20px;
+    color: aliceblue;
+    margin-bottom: 1%;
+    font-family: 'VT323', monospace;
+}
+.footerContainer p{
+    font-family: 'VT323', monospace;
+    margin-top: 1%;
+    color: aliceblue;
+}

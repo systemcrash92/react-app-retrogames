@@ -61,3 +61,29 @@
 .btn-gotocart:active{
     transform: translateY(2px);
 }
+.Loading-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    margin-top: 15%;
+    
+    
+
+}
+
+.Loading-container img{
+    width: 70px;
+    height: 70px;
+    animation-name: rotateLoading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;
+    box-shadow: 2px,2px black;
+    margin-bottom: 20%;
+  
+}
+@keyframes rotateLoading{
+    0%{transform: rotateZ(0deg);}
+    100%{transform: rotateZ(-360deg);}
+}

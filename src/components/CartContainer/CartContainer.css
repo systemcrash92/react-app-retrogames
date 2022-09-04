@@ -13,7 +13,7 @@
 }
 .container-cards{
  width: 100%;
- background-color: rgba(0, 0, 0,60%);
+ background-color: rgba(0, 0, 0,90%);
  display:  flex;
  justify-content: center;
  flex-direction: column;
@@ -80,6 +80,7 @@ flex-wrap: wrap;
     color: aliceblue;
     text-shadow: 0px 0px 5px black;
     font-family: 'Rubik Mono One', sans-serif;
+    
 }
 
 
@@ -90,5 +91,13 @@ flex-wrap: wrap;
 .btn-makeorder:active{
     transform: translateY(2px);   
 }
+.total{
+
+    color: aliceblue;
+    font-size: 30px;
+    margin: 3%;
+    font-family: 'VT323', monospace;
+}
+
 
 

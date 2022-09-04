@@ -1,26 +1,25 @@
 import "./CartContainer.css"
-import {useContext} from "react";
+import {useContext,useState} from "react";
 import { CartContext } from "../../context/CartContext";
+import Formulario from "../Form/Formulario";
 
 
 
 
 const CartContainer = () =>{
-
+    const [bisFormWidget,setFormWidget] = useState(false)
     const  ContextValues = useContext(CartContext)
     const showCart = ContextValues[6]
-   
-    
-    
-   
+    const totalPrice = ContextValues[7]()
+
 
     return (
 
         <div className="container-main">
             <div className="container-cards">
-            {showCart.length && <h1 className="empty"> CART </h1> }
+            {showCart.length &&  <h1 className="empty"> CART </h1> }
                     {
-                        
+                        !bisFormWidget &&
                         
                               showCart.map(game =>{
                            
@@ -37,8 +36,10 @@ const CartContainer = () =>{
                         })
                        
                     }   
-                     {!showCart.length && <h1 className="empty">the cart is empty</h1>}   
-                     {showCart.length && <button className="btn-makeorder"> Make Order </button> }      
+                     {!showCart.length &&!bisFormWidget&& <h1 className="empty">the cart is empty</h1>} 
+                     {showCart.length && !bisFormWidget && <h1 className="total"> Total price: ${totalPrice} </h1>}  
+                     {showCart.length && !bisFormWidget && <button onClick={()=>{setFormWidget(true)}} className="btn-makeorder"> Make Order </button> }
+                     {bisFormWidget && <Formulario/>}      
              </div>   
         </div>
     )

@@ -10,6 +10,7 @@ import {db} from '../../services/firebase/index'
 
 const ItemListContainer = (props)=>{
     const [Products,SetProducts]= useState([])
+    const [isLoading,SetisLoading] = useState(true)
     
 
 // pido la peticion a la api dsp de montar el componente
@@ -24,14 +25,24 @@ const ItemListContainer = (props)=>{
                     
                 })
                 SetProducts(products)
+                SetisLoading(false)
                
            
             
         })
     
     }, [])
-
+   
 //loading section
+if(isLoading){
+    return(
+        <div className='Loading-container'>
+            <img src="/images/rotate_loading.png" alt="IMG" />
+            
+        </div>
+    )
+    
+}
   
     
     return (

@@ -10,6 +10,7 @@ const CategoryContainer = ()=>{
 
     const [Games,SetGames]= useState([])
     const [valueS,setValueS] = useState('Bullethell')
+    const [isLoading,SetisLoading] = useState(true)
     
     const filterGames = (category)=>{
         const value = Games.filter(prod => prod.category === category)
@@ -33,10 +34,19 @@ const CategoryContainer = ()=>{
                         
                     })
                     SetGames(products) 
+                    SetisLoading(false)
                     
             })
         
         }, [])
+        //loading Section
+        if (isLoading) {
+            return(
+                <div className="Loading-container">
+                <img src="/images/rotate_loading.png" alt="IMG" />
+                 </div>
+            )
+        }
 
 
     return(

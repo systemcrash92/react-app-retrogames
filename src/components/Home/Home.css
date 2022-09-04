@@ -32,10 +32,7 @@
     width: 100%;
     
 }
-.container-home img:hover{
-    
-    
-}
+
 @keyframes rotateCartridge {
     0%{transform: rotateY(-5deg);}
     50%{transform: rotateY(5deg);}

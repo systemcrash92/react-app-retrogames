@@ -10,6 +10,7 @@
     flex-direction: column;
     
     
+    
   
     
 }
@@ -101,6 +102,7 @@
     justify-content: center;
     align-items:center ;
     margin-top: 15%;
+
 }
 
 .Loading-container img{
@@ -110,9 +112,11 @@
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function:linear;
+    box-shadow: 2px,2px black;
+    margin-bottom: 20%;
   
 }
 @keyframes rotateLoading{
     0%{transform: rotateZ(0deg);}
-    100%{transform: rotateZ(360deg);}
+    100%{transform: rotateZ(-360deg);}
 }

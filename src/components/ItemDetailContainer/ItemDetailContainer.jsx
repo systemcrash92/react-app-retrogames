@@ -13,6 +13,7 @@ const ItemDetailContainer =()=>{
     const [Product,SetProduct]= useState({})
     const params = useParams()
     const [Quantity,SetQuantity] = useState(0)
+    const [isLoading,SetisLoading] = useState(true)
 
     const  ContextValues = useContext(CartContext)
 
@@ -34,6 +35,7 @@ const ItemDetailContainer =()=>{
         getDoc(doc(db,'products',params.gameID)).then((response)=>{
             const product = {id:response.id,...response.data()}
            SetProduct(product)
+           SetisLoading(false)
             
             
            
@@ -41,6 +43,17 @@ const ItemDetailContainer =()=>{
         })
     
     },[params.gameID])
+
+
+    if (isLoading) {
+
+        return(
+            <div className="Loading-container">
+                 <img src="/images/rotate_loading.png" alt="IMG" />
+            </div>
+        )
+        
+    }
 
     return(
         <div  className="Container-Detail">
